@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* Establecer un tamaño específico a la pantalla */
+  font-size: 62.5%;
+  /* Especificar que el elemento incluirá automáticamente el espacio ocupado por el relleno y el borde. Que una caja considere el ancho, el padding y el border. Si se utilizase el modelo de caja por defecto (content-box): clientWidth = width + padding + border no se sabría sino calculando el tamaño exacto de la caja, por ello mejor serí reemplazarlo por border-box: clientWidth = width - padding - border */
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Agregarle tamaño al contenido de la pantalla, así se equipara el cambio */
+  font-size: 16px;
+  width: 100%;
+  font-family: 'Krub', sans-serif;
+}
+
+/* Esto lo que hace es hacer que en tu html se use border-box y los elementos hereden este valor pero puedan cambiar si fuese necesario por otro valor (aunque es poco probable que lo uses quién sabe si cargas algún componente de tercero que sí). */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Global Styles */
+
+h1 {
+  font-size: 5rem;
+  line-height: 6.4rem;
+  color: #222;
+}
+
+h2 {
+  font-size: 4.6rem;
+  line-height: 5.4rem;
+  color: #222;
+}
+
+h4 {
+  font-size: 2rem;
+  color: #222;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+p {
+  font-size: 1.6rem;
+  color: #465b52;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.section-p1 {
+  padding: 4rem 8rem;
+}
+
+.section-m1 {
+  margin: 4rem 0;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 8rem;
+  background: #E3E6F3;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar li {
+  list-style: none;
+  padding: 0 2rem;
+  position: relative;
+}
+
+#navbar li a {
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+  color: #3AA39F;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+  content: "";
+  width: 30%;
+  height: 0.2rem;
+  background: #3AA39F;
+  position: absolute;
+  bottom: -0.4rem;
+  left: 2rem;
+}
+
+#hero {
+  background-image: url("/img/hero.png");
+  height: 90vh;
+  width: 100%;
+  background-size: cover;
+  background-position: top 25% right 0;
+  padding: 0 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
+#hero-content {
+  background-color: rgba(248, 248, 248, 0.77);
+  border-radius: 1rem;
+  padding: 3rem;
+  text-align: center;
+}
+
+#h2-main {
+  color: #3AA39F;
+}
+
+#hero a {
+  text-decoration: none;
+  background-image: url("/img/button.png");
+  background-color: transparent;
+  color: #17183B;
+  font-weight: bold;
+  padding: 1.4rem 8rem 1.4rem 6.5rem;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border: none;
+}
+
+#feature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#feature .fe-box {
+  width: 30rem;
+  padding: 2.5rem 1.5rem;
+  text-align: left;
+  box-shadow: 2rem 2rem 3.4rem rgba(0, 0, 0, 0.03);
+  border: 0.1rem;
+  border-radius: 1rem;
+  margin: 1.5rem 0;
+}
+
+.fe-box h3 {
+  font-size: 3.4rem;
+  margin-bottom: 3rem;
+}
+
+#feature .fe-box:hover {
+  box-shadow: 1rem 1rem 5.4rem rgba(70, 62, 221, 0.1);
+}
+
+#feature .fe-box2 {
+  width: 30rem;
+  height: 35rem;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  box-shadow: 2rem 2rem 3.4rem rgba(0, 0, 0, 0.03);
+  border: 0.1rem;
+  border-radius: 1rem;
+  margin: 1.5rem 0;
+}
+
+#feature .fe-box2:hover {
+  background-color: rgba(58, 163, 159, 0.30);
+}
+
+.section-p2 {
+  display: flex;
+  justify-content: center;
+  margin: 10rem;
+}
+
+.p2__description {
+  margin: 3rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 5rem;
+}
+
+.description__principal {
+  display: flex;
+  flex-direction: column;
+}
+
+.description__principal h3 {
+  font-size: 3.4rem;
+  margin-bottom: 3rem;
+}
+
+.description__principal p {
+  text-align: justify;
+}
+
+.description__blocks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  gap: 2rem;
+}
+
+.description__blocks p {
+  text-align: left;
+  padding: 1rem;
+}
+
+.description__blocks h3 {
+  display: inline-block;
+  padding: 0.9rem 0.8rem 0.6rem 0.8rem;
+  line-height: 1;
+  border-radius: 0.4rem;
+  color: #088178;
+  background-color: #E3E6F3;
+}
+
+#product1 {
+  text-align: center;
+}
+
+#product1 .pro {
+  width: 23%;
+  min-width: 25rem;
+  padding: 1rem 1.2rem;
+  border: 0.1rem solid #cce7d0;
+}
+
+#product1 .pro img {
+  width: 100%;
+  border-radius: 20px;
+}
